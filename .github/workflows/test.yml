@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: run_rtank
+name: run_ptank
 
 # Controls when the workflow will run
 on:
@@ -23,15 +23,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout 
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-     
 
       # Runs a set of commands using the runners shell
       - name: Ptank
         run: |
-          echo "Download ptank list
           wget http://data.phishtank.com/data/5836c016df5f11fc0036f31018da1cb77327a0b0da767badb88cf6ddd488c6e3/online-valid.csv.gz
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
